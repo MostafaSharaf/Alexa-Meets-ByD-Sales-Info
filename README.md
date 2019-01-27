@@ -16,7 +16,7 @@ For detailed demo refer to video [Alexa Meets SAP Business ByDesign](https://you
 ## Installation
 ### STEP 1: ByD OData API
 * Build the OData URL for specific Analytical report
-* Upload and Build the Custom OData service for Creation of Sales Order ( xml file 'khsalesorderdemo.xml' in folder /bydodatamodels/khsalesorderdemo.xml)
+
 
 ### STEP 2: Deployment of the ByD Assistant Backend in the SAP Cloud Platform
 * Clone/Download this repository
@@ -30,8 +30,6 @@ Then set the Environment Variables accordingly
 $ cf set-env <your app name> BYD_SERVER http://<your byd server>
 $ cf set-env <your app name> BYD_PORT ""
 $ cf set-env <your app name> BYD_AUTH <[Base64 Encoded] user:password>
-$ cf set-env <your app name> BYD_PATH <path of the custom OData Service used for creation of Sales Orders>
-$ cf set-env <your app name> BYD_DEFAULT_BP <Defuatl Business Partner (BP) used for creation of Sales Order>
 
 ```
 For Example:
@@ -39,11 +37,10 @@ For Example:
 $ cf set-env BydDigitalAssistant BYD_SERVER https://my123456.sapbydesign.com
 $ cf set-env  BydDigitalAssistant BYD_PORT ""
 $ cf set-env BydDigitalAssistant BYD_AUTH ABCDEFGHIJKLMNOPQRSTUVWZYZ123456789==
-cf set-env  BydDigitalAssistant BYD_PATH /sap/byd/odata/cust/v1/khsalesorderdemo
-cf set-env  BydDigitalAssistant BYD_DEFAULT_BP CP100110
+
 
 * Note : Set the BYD_PORT to blank , since there is no PORT value in the URL of BYD
-* Note : Generate the Base64 Encoded using Postman application
+* Note : Generate the Base64 Encoded using external application like Postman
 * Note: user can decide to use UserName and Password authentication , in that case user has to adapt the Authorization (request header of OData POST service call) webapplication coding accordingly
 ```
 Restart your application (so it can read the new environment variables)
@@ -57,7 +54,7 @@ You will see your backend URL (to be used in the next step)
 * Follow the steps int he [skill](skill/) folder to create your Alexa Skill and have it connected to the SAP Cloud Platform
 
 ## Test it
-* [Now you can talk to your SAP Business By Design](https://www.youtube.com/watch?v=40DSBibkL50)
+* [Now you can talk to your SAP Business By Design](https://youtu.be/4SJvLTg5shM)
 
 
 ## License
